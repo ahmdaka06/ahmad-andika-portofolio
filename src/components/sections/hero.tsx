@@ -48,14 +48,16 @@ export function Hero() {
           </div>
 
           <div className="flex justify-center lg:col-span-5 lg:justify-end">
-            <div className="rounded-xl border border-[var(--border-accent)] p-1 shadow-[var(--shadow-glow-copper)]">
+            <div className="relative rounded-xl border border-[var(--border-accent)] p-1 shadow-[var(--shadow-glow-copper)]">
               <Image
                 src={profile.photoPath}
                 alt={profile.name}
                 width={280}
                 height={320}
                 priority
+                loading="eager"
                 className="rounded-[14px] object-cover"
+                style={{ height: "auto" }}
               />
             </div>
           </div>

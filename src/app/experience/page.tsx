@@ -6,6 +6,8 @@ import { Timeline } from "@/components/sections/timeline";
 import { ContactCTA } from "@/components/sections/contact-cta";
 import { createPageMetadata, createBreadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { Badge } from "@/components/ui/badge";
+import { RevealSection } from "@/components/sections/reveal-section";
+import { staggerDelay } from "@/lib/animations";
 
 export const metadata = createPageMetadata({
   title: "Experience | Ahmad Andika Khoirul Amin",
@@ -29,19 +31,21 @@ export default function ExperiencePage() {
       <JsonLd data={breadcrumbs} />
       <Breadcrumbs items={[{ label: "Experience" }]} />
       <PageShell>
-        <div className="flex flex-wrap items-center gap-4">
-          <h1 className="font-heading text-4xl font-semibold tracking-tight">Work Experience</h1>
-          <Badge className="rounded-sm bg-[var(--accent-copper-muted)] text-primary">
-            {profile.yearsExperience}+ years
-          </Badge>
-        </div>
-        <p className="mt-4 max-w-prose text-muted-foreground">
-          Backend and full-stack roles across payment platforms, ticketing systems, and business
-          applications.
-        </p>
-        <div className="mx-auto mt-12 max-w-3xl">
+        <RevealSection as="div">
+          <div className="flex flex-wrap items-center gap-4">
+            <h1 className="font-heading text-4xl font-semibold tracking-tight">Work Experience</h1>
+            <Badge className="rounded-sm bg-[var(--accent-copper-muted)] text-primary">
+              {profile.yearsExperience}+ years
+            </Badge>
+          </div>
+          <p className="mt-4 max-w-prose text-muted-foreground">
+            Backend and full-stack roles across payment platforms, ticketing systems, and business
+            applications.
+          </p>
+        </RevealSection>
+        <RevealSection delay={staggerDelay(0)} className="mx-auto mt-12 max-w-3xl">
           <Timeline experiences={sorted} />
-        </div>
+        </RevealSection>
       </PageShell>
       <ContactCTA condensed />
     </>

@@ -4,6 +4,8 @@ import { PageShell } from "@/components/layout/page-shell";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { createPageMetadata, createBreadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { Card, CardContent } from "@/components/ui/card";
+import { RevealSection } from "@/components/sections/reveal-section";
+import { staggerDelay } from "@/lib/animations";
 
 export const metadata = createPageMetadata({
   title: "About | Ahmad Andika Khoirul Amin",
@@ -21,10 +23,12 @@ export default function AboutPage() {
       <JsonLd data={breadcrumbs} />
       <Breadcrumbs items={[{ label: "About" }]} />
       <PageShell>
-        <h1 className="font-heading text-4xl font-semibold tracking-tight">About Me</h1>
+        <RevealSection as="div">
+          <h1 className="font-heading text-4xl font-semibold tracking-tight">About Me</h1>
+        </RevealSection>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4">
+          <RevealSection as="div" delay={staggerDelay(0)} className="lg:col-span-4">
             <div className="sticky top-24">
               <div className="mx-auto w-fit rounded-xl border border-[var(--border-accent)] p-1 lg:mx-0">
                 <Image
@@ -52,17 +56,17 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
             </div>
-          </div>
+          </RevealSection>
 
           <div className="space-y-10 lg:col-span-8">
-            <section>
+            <RevealSection delay={staggerDelay(1)}>
               <h2 className="font-heading text-2xl font-semibold">Introduction</h2>
               <p className="mt-4 max-w-prose leading-relaxed text-muted-foreground">
                 {profile.summary}
               </p>
-            </section>
+            </RevealSection>
 
-            <section>
+            <RevealSection delay={staggerDelay(2)}>
               <h2 className="font-heading text-2xl font-semibold">Professional Summary</h2>
               <p className="mt-4 max-w-prose leading-relaxed text-muted-foreground">
                 Strong in problem-solving, system optimization, API security, and delivering
@@ -70,9 +74,9 @@ export default function AboutPage() {
                 Laravel, Node.js, MySQL, PostgreSQL, and architecture patterns including MVC,
                 modular design, and clean architecture.
               </p>
-            </section>
+            </RevealSection>
 
-            <section>
+            <RevealSection delay={staggerDelay(3)}>
               <h2 className="font-heading text-2xl font-semibold">Education</h2>
               {profile.education.map((edu) => (
                 <div
@@ -87,14 +91,14 @@ export default function AboutPage() {
                   )}
                 </div>
               ))}
-            </section>
+            </RevealSection>
 
-            <section>
+            <RevealSection delay={staggerDelay(5)}>
               <h2 className="font-heading text-2xl font-semibold">Career Journey</h2>
               <p className="mt-4 max-w-prose leading-relaxed text-muted-foreground">
                 {profile.careerJourney}
               </p>
-            </section>
+            </RevealSection>
           </div>
         </div>
       </PageShell>

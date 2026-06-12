@@ -56,6 +56,15 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+@keyframes nav-underline {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 :root {
   --background: #fafafa;
   --foreground: #0b0c0f;

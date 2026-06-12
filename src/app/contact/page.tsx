@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { ContactChannelCard } from "@/components/sections/contact-channel-card";
 import { createPageMetadata, createBreadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { Badge } from "@/components/ui/badge";
+import { RevealSection } from "@/components/sections/reveal-section";
+import { staggerDelay } from "@/lib/animations";
 
 export const metadata = createPageMetadata({
   title: "Contact | Ahmad Andika Khoirul Amin",
@@ -72,7 +74,7 @@ export default function ContactPage() {
           />
 
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-5">
+            <RevealSection as="div" className="lg:col-span-5">
               <p className="text-overline text-foreground-subtle mb-4">
                 <span className="text-accent-phosphor">{"// "}</span>
                 GET IN TOUCH
@@ -97,50 +99,31 @@ export default function ContactPage() {
                   {profile.location}
                 </Badge>
               </div>
-            </div>
+            </RevealSection>
 
             <div className="lg:col-span-7">
               <div className="grid gap-4 sm:grid-cols-2">
-                <ContactChannelCard
-                  href={`mailto:${profile.email}`}
-                  label="Email"
-                  value={profile.email}
-                  icon={Mail}
-                  primary
-                />
-                <ContactChannelCard
-                  href={`tel:${profile.phone.replace(/\s/g, "")}`}
-                  label="Phone"
-                  value={profile.phone}
-                  icon={Phone}
-                />
-                <SocialChannelCard
-                  href={profile.github}
-                  label="GitHub"
-                  value="ahmdaka06"
-                  icon={<SocialIcon>GH</SocialIcon>}
-                />
-                <SocialChannelCard
-                  href={profile.linkedin}
-                  label="LinkedIn"
-                  value="ahmadandika"
-                  icon={<SocialIcon>in</SocialIcon>}
-                />
-                <ContactChannelCard
-                  href={profile.cvPath}
-                  label="Resume"
-                  value="Download CV (PDF)"
-                  icon={Download}
-                  download
-                />
+                {[
+                  { component: <ContactChannelCard key="email" href={`mailto:${profile.email}`} label="Email" value={profile.email} icon={Mail} primary />, delay: 0 },
+                  { component: <ContactChannelCard key="phone" href={`tel:${profile.phone.replace(/\s/g, "")}`} label="Phone" value={profile.phone} icon={Phone} />, delay: 1 },
+                  { component: <SocialChannelCard key="github" href={profile.github} label="GitHub" value="ahmdaka06" icon={<SocialIcon>GH</SocialIcon>} />, delay: 2 },
+                  { component: <SocialChannelCard key="linkedin" href={profile.linkedin} label="LinkedIn" value="ahmadandika" icon={<SocialIcon>in</SocialIcon>} />, delay: 3 },
+                  { component: <ContactChannelCard key="cv" href={profile.cvPath} label="Resume" value="Download CV (PDF)" icon={Download} download />, delay: 4 },
+                ].map((item) => (
+                  <RevealSection key={item.delay} as="div" delay={staggerDelay(item.delay)}>
+                    {item.component}
+                  </RevealSection>
+                ))}
               </div>
 
-              <div className="mt-6 flex items-center justify-center gap-2 rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-inset)] px-4 py-3 sm:justify-start">
-                <Clock className="size-4 text-[var(--accent-steel)]" />
-                <p className="font-mono text-xs text-muted-foreground">
-                  Typically responds within 24 hours
-                </p>
-              </div>
+              <RevealSection as="div" delay={staggerDelay(5)}>
+                <div className="mt-6 flex items-center justify-center gap-2 rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-inset)] px-4 py-3 sm:justify-start">
+                  <Clock className="size-4 text-[var(--accent-steel)]" />
+                  <p className="font-mono text-xs text-muted-foreground">
+                    Typically responds within 24 hours
+                  </p>
+                </div>
+              </RevealSection>
             </div>
           </div>
         </div>

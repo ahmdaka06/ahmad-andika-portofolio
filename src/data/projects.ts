@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     slug: "vipayment",
     name: "VIPayment - B2B Reseller Platform for Digital Products",
-    category: "Top Up Game Platform",
+    category: "Payment Platform",
     description:
       "Reseller platform for digital products (pulsa, games, e-money) with H2H APIs, $4.1M+ USD in handled volume, and 50,000+ daily transactions.",
     role: "Full Stack Developer",
@@ -49,7 +49,7 @@ export const projects: Project[] = [
   {
     slug: "vipayment-v2",
     name: "VIPayment V2 - Public B2C Storefront for Digital Products",
-    category: "Top Up Game Platform",
+    category: "Payment Platform",
     description:
       "Public-facing game top-up and digital voucher storefront where end users transact directly — the B2C companion to the VIPayment reseller platform.",
     role: "Full Stack Developer",
@@ -177,7 +177,7 @@ export const projects: Project[] = [
   {
     slug: "deratopup",
     name: "Deratopup - Game Top-Up and Digital Voucher Platform",
-    category: "Top Up Game Platform",
+    category: "Payment Platform",
     description:
       "Game top-up and digital voucher platform with real-time transaction processing and $3M+ USD in handled volume.",
     role: "Full Stack Developer",
@@ -223,7 +223,7 @@ export const projects: Project[] = [
   {
     slug: "game-top-up-platform",
     name: "Top-Up Game Platform - 10+ White-Label Platforms for Indonesian Clients",
-    category: "Top Up Game Platform",
+    category: "Payment Platform",
     description:
       "Delivered 10+ white-label game top-up platforms for predominantly Indonesian clients — built, handed over, and no longer under my maintenance.",
     role: "Full Stack Developer",
@@ -364,23 +364,82 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    slug: "pos-system",
-    name: "Point of Sale System - POS System for Retail Operations",
+    slug: "alkautsar-ngoro-pos",
+    name: "Point Of Sale - Al Kautsar Ngoro",
     category: "POS",
-    description: "POS system with real-time product, stock, and sales reporting.",
+    description:
+      "Point of Sale system for Al Kautsar Ngoro with real-time product, stock, and price management, barcode scanner integration, receipt printing, and automated daily, weekly, and monthly sales reporting.",
     role: "Full Stack Developer",
     period: "Freelance",
     country: "Indonesia",
-    techStack: ["PHP", "Laravel", "MySQL", "JavaScript"],
-    challenges: ["Real-time inventory and sales management with hardware integration."],
-    results: ["Integrated barcode scanners and automated sales reporting."],
-    overview: "Complete POS system for retail operations with inventory and reporting.",
-    problem: "Retail businesses needed integrated POS with real-time stock management.",
-    solution: "Designed POS with barcode integration and automated reporting.",
-    architecture: "Laravel backend with real-time stock sync and receipt printing integration.",
-    responsibilities: ["Full-stack development and hardware integration."],
-    thumbnailPath: "/images/projects/pos-placeholder.jpg",
-    galleryPaths: [],
+    techStack: [
+      "Laravel",
+      "Livewire",
+      "Filament",
+      "Alpine.js",
+      "MySQL",
+    ],
+    challenges: [
+      "Real-time inventory and stock synchronization across POS terminals during checkout.",
+      "Integrating barcode scanners and receipt printers for seamless retail operations.",
+    ],
+    results: [
+      "Delivered a full POS system with real-time product, stock, and price management.",
+      "Integrated barcode scanners and receipt printers for seamless checkout operations.",
+      "Built automated daily, weekly, and monthly sales reporting for business insights.",
+    ],
+    overview:
+      "A complete Point of Sale system built for Al Kautsar Ngoro (alkautsar-ngoro) — real-time product and stock management, barcode scanner and receipt printer integration, and automated sales reporting. Built with Laravel, Livewire, Filament admin panel, Alpine.js, and MySQL.",
+    problem:
+      "Al Kautsar Ngoro needed an integrated POS system with real-time stock tracking, hardware integration (barcode scanners, receipt printers), and automated reporting to replace manual spreadsheets and paper-based operations.",
+    solution:
+      "Designed a modern POS with Laravel and Filament admin panel, Livewire for reactive UI, barcode scanner and receipt printer integration, and automated sales reporting pipelines.",
+    architecture:
+      "Laravel backend with Filament admin panel for management, Livewire components for reactive POS checkout UI, Alpine.js for frontend interactions, MySQL persistence, and hardware integration layer for barcode scanners and receipt printers with automated reporting schedules.",
+    responsibilities: [
+      "Built the complete POS system end-to-end with Laravel, Livewire, and Filament.",
+      "Integrated barcode scanners and receipt printers for seamless retail checkout.",
+      "Developed automated daily, weekly, and monthly sales reporting features.",
+    ],
+    thumbnailPath: "/portofolio/point-of-sale.png",
+    galleryPaths: ["/portofolio/point-of-sale.png"],
+    links: {},
+    featured: false,
+  },
+  {
+    slug: "alkautsar-ngoro-spp",
+    name: "SPP Payment - Al Kautsar Ngoro",
+    category: "Payment Platform",
+    description:
+      "Web-based tuition payment (SPP) platform for Al Kautsar Ngoro with automated billing based on education level, payment monitoring, and student data management.",
+    role: "Full Stack Developer",
+    period: "Freelance",
+    country: "Indonesia",
+    techStack: ["Laravel", "jQuery", "MySQL"],
+    challenges: [
+      "Automating monthly billing based on education level and class enrollment.",
+      "Building an admin dashboard for payment status monitoring and report generation.",
+    ],
+    results: [
+      "Delivered a web-based SPP payment platform for parents to pay online easily.",
+      "Implemented automated billing by education level and current month.",
+      "Built admin dashboard to monitor payment status, generate reports, and manage student data.",
+    ],
+    overview:
+      "A web-based tuition payment (SPP) platform built for Al Kautsar Ngoro — parents can pay tuition online, while the admin dashboard handles automated billing, payment monitoring, student data management, and report generation. Built with Laravel, jQuery, and MySQL.",
+    problem:
+      "Al Kautsar Ngoro needed a digital system for parents to pay tuition online and for administrators to manage billing, track payment status, and generate reports — replacing manual cash-based collection.",
+    solution:
+      "Built a Laravel-based SPP platform with jQuery frontend and MySQL — automated monthly billing, online payment flows, admin dashboard for monitoring and reporting, and student data management.",
+    architecture:
+      "Laravel backend with jQuery frontend, MySQL persistence. Automated billing scheduler, payment status tracking, admin dashboard with student, class, and billing management modules.",
+    responsibilities: [
+      "Developed the SPP payment platform end-to-end with Laravel and jQuery.",
+      "Implemented automated billing logic based on education level and enrollment.",
+      "Built admin dashboard with payment monitoring, reporting, and student management.",
+    ],
+    thumbnailPath: "/portofolio/spp.png",
+    galleryPaths: ["/portofolio/spp.png"],
     links: {},
     featured: false,
   },

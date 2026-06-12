@@ -82,7 +82,7 @@ export interface Certification {
 
 export interface Skill {
   name: string;
-  proficiency: 1 | 2 | 3 | 4;
+  proficiency?: 1 | 2 | 3 | 4;
 }
 
 export interface SkillCategory {
